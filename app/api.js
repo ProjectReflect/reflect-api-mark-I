@@ -60,9 +60,9 @@ api.get('/eta', function(req, res){
               res.send(body);
            }   
       }).on('error', function(err) {
-      console.log(err);
-      res.send(err);
+        console.log(err);
+        res.send(err);
+      });
     }
-  });
 });
 module.exports = api;

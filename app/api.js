@@ -46,7 +46,7 @@ api.get('/news', function(req, res) {
     });
   }
   else {
-      res.send(JSON.stringify({status: "Invalid Authentication Key" key: userKey}));
+      res.send(JSON.stringify({status: "Invalid Authentication Key", key: userKey}));
   }
 });
 

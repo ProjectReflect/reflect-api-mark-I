@@ -21,7 +21,7 @@ api.get('/test', function(req, res) {
 });
 
 api.get('/news', function(req, res) {
-  if (req.userKey == userKey){
+  if (req.param('userKey') == userKey){
     var articles = [];
 
     var rp = require("request-promise");
@@ -46,12 +46,12 @@ api.get('/news', function(req, res) {
     });
   }
   else {
-      res.send(JSON.stringify({status: "Invalid Authentication Key", key: userKey}));
+      res.send(JSON.stringify({status: "Invalid Authentication Key"}));
   }
 });
 
 api.get('/eta', function(req, res){
-    if (req.userKey == userKey){
+    if (req.param('userKey') == userKey){
       var request = require("request");
       var options = {
           uri : "https://maps.googleapis.com/maps/api/directions/json?mode=transit&origin="+encodeURI(origin)+"&destination="+encodeURI(destination)+"&key="+mapsApiKey,

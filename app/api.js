@@ -46,7 +46,7 @@ api.get('/news', function(req, res) {
 api.get('/eta', function(req, res){
     var request = require("request");
     var options = {
-        uri : "https://maps.googleapis.com/maps/api/directions/json?origin="+encodeURI(origin)+"&destination="+encodeURI(destination)+"&key="+mapsApiKey,
+        uri : "https://maps.googleapis.com/maps/api/directions/json?mode=transit&origin="+encodeURI(origin)+"&destination="+encodeURI(destination)+"&key="+mapsApiKey,
         method : 'GET',
     };
    request(options, function(error,response,body){

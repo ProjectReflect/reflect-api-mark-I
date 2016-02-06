@@ -45,6 +45,9 @@ api.get('/news', function(req, res) {
           console.log (e);
     });
   }
+  else {
+      res.send(JSON.stringify({status: "Invalid Authentication Key"}));
+  }
 });
 
 api.get('/eta', function(req, res){
@@ -63,6 +66,9 @@ api.get('/eta', function(req, res){
         console.log(err);
         res.send(err);
       });
+    }
+    else {
+      res.send(JSON.stringify({status: "Invalid Authentication Key"}));
     }
 });
 module.exports = api;

@@ -7,8 +7,8 @@ var request = require("request");
 var parseString = require('xml2js').parseString;
 
 var mapsApiKey = process.env.mapsKey;
-var origin = ;
-var destination = ;
+var origin = process.env.origin;
+var destination = process.env.destination;
 
 var error = function(err) {
       console.log('API call failed: ', err);

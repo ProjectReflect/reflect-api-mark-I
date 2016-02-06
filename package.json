@@ -1,0 +1,30 @@
+{
+  "name": "reflect-api",
+  "version": "1.0.0",
+  "description": "Mirror Backend",
+  "main": "server.js",
+  "dependencies": {
+    "request-promise": "^0.4.3",
+    "express": "^4.13.3",
+    "request": "^2.62.0",
+    "xml2js": "^0.4.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "4.2.4"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjectReflect/reflect-api-mark-I.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ProjectReflect/reflect-api-mark-I/issues"
+  },
+  "homepage": "https://github.com/ProjectReflect/reflect-api-mark-I#readme"
+}

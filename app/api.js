@@ -10,7 +10,7 @@ var mapsApiKey = process.env.mapsKey;
 var origin = process.env.origin;
 var destination = process.env.destination;
 var lat = process.env.lat;
-var lat = process.env.lon;
+var lon = process.env.lon;
 var owmKey = process.env.owmKey;
 
 var userKey = process.env.userKey;

@@ -9,6 +9,9 @@ var parseString = require('xml2js').parseString;
 var mapsApiKey = process.env.mapsKey;
 var origin = process.env.origin;
 var destination = process.env.destination;
+var lat = process.env.lat;
+var lat = process.env.lon;
+var owmKey = process.env.owmKey;
 
 var userKey = process.env.userKey;
 
@@ -71,4 +74,27 @@ api.get('/eta', function(req, res){
       res.send(JSON.stringify({status: "Invalid Authentication Key"}));
     }
 });
+
+api.get('/weather', function(req, res){
+    if (req.param('userKey') == userKey){
+      var request = require("request");
+      var options = {
+          uri : "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+owmKey,
+          method : 'GET',
+      };
+     request(options, function(error,response,body){
+           if (!error && response.statusCode == 200) {
+              console.log(body); // Show the HTML for the Modulus homepage.
+              res.send(body);
+           }   
+      }).on('error', function(err) {
+        console.log(err);
+        res.send(err);
+      });
+    }
+    else {
+      res.send(JSON.stringify({status: "Invalid Authentication Key"}));
+    }
+});
+
 module.exports = api;
